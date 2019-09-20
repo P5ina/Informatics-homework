@@ -4,15 +4,28 @@ using namespace std;
 
 int main()
 {
-	int a, b, c;
+	int a, b, c, maxNum;
 	cin >> a >> b >> c;
-    
-	if (a == b + c || b == a + c || c == a + b)
+   
+	if (a >= b && a >= c)
 	{
-		cout << "NO" << "\n";
+		maxNum = a;
+	}
+	else if (b >= c && b >= a)
+	{
+		maxNum = b;
 	}
 	else
 	{
+		maxNum = c;
+	}
+
+	if (maxNum < a + b + c - maxNum)
+	{
 		cout << "YES" << "\n";
+	}
+	else
+	{
+		cout << "NO" << "\n";
 	}
 }
